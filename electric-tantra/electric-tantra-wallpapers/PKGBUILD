@@ -1,0 +1,16 @@
+# Maintainer: Thomas Leon Highbaugh
+
+pkgname=electric-tantra-wallpapers
+pkgver=1.0
+pkgrel=1
+pkgdesc="Electric Tantra Linux artwork by TLH."
+arch=('any')
+license=('GPL')
+provides=($pkgname)
+conflicts=($pkgname)
+depends=()
+
+package() {
+	# copy whole dir recursively to destination
+	(find electric-tantra -type f -exec install -Dm 644 "{}" "$pkgdir/usr/share/backgrounds/{}" \;)
+}

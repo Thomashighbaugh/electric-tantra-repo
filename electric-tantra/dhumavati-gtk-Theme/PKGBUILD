@@ -1,0 +1,17 @@
+# Thomas Leon Highbaugh
+# Dhumavati GTK PKGBUILD
+# Part of: Electric Tantra Linux
+pkgname=dhumavati-gtk-theme
+pkgver=1.0
+pkgrel=1
+pkgdesc="GTK Theme of Electric Tantra Linux."
+arch=('any')
+license=('GPL')
+provides=($pkgname)
+conflicts=($pkgname)
+depends=()
+
+package() {
+	git clone "https://github.com/Thomashighbaugh/Dhumavati-Theme" /tmp/Dhumavati-GTK-Theme-Staging
+	sudo sh $HOME/.local/share/Dhumavati-GTK-Theme/install.sh
+}

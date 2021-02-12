@@ -1,0 +1,15 @@
+pkgname=chhinamasta-icon-theme
+pkgver=1.0
+pkgrel=1
+pkgdesc="Chhinamasta icon theme by TLH."
+arch=('any')
+license=('GPL')
+provides=($pkgname)
+conflicts=($pkgname)
+depends=()
+
+package() {
+	rm -rvf "$pkgdir/usr/share/icons"
+	mkdir -p "$pkgdir/usr/share/icons"
+	cp -r . "$pkgdir/usr/share/icons/"
+}

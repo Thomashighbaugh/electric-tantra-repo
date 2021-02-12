@@ -1,0 +1,17 @@
+pkgname=bhairava-grub2-theme
+pkgver=1.0
+pkgrel=1
+pkgdesc="The default grub2 theme for Electric Tantra Linux."
+arch=('any')
+license=('GPL')
+provides=($pkgname)
+conflicts=($pkgname)
+depends=('grub')
+
+package() {
+
+	# copy whole dir recursively to destination
+	git clone https://github.com/Thomashighbaugh/Bhairava-Grub-Theme /tmp/Bhairava-Grub-Theme
+	sh /tmp/Bhairava-Grub-Theme/svg2png.sh
+	sh /tmp/Bhairava-Grub-Theme/set-grub.sh
+}
